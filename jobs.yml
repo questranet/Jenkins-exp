@@ -23,7 +23,7 @@
         url: "{{jenkins_url}}"
         user: "{{jenkins_user}}"
       vars:
-        repo_name: parameters-01
+        repo_name: backend
 
     - name: Create Jenkins Job - Expense Parameters
       community.general.jenkins_job:
@@ -33,7 +33,7 @@
         url: "{{jenkins_url}}"
         user: "{{jenkins_user}}"
       vars:
-        repo_name: backend
+        repo_name: parameters-01
 
     - name: Create Jenkins Job - Expense Terraform
       community.general.jenkins_job:

@@ -11,7 +11,7 @@
     </actions>
     <description></description>
     <keepDependencies>false</keepDependencies>
-    {% if "{{auto_trigger}}" == "true" %}
+    {% if "{{ auto_trigger }}" == "true" %}
     <properties>
         <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
             <triggers>

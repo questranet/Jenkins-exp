@@ -4,72 +4,72 @@
     jenkins_url : http://172.31.42.84:8080
     jenkins_password: "{{ lookup('aws_ssm', 'jenkins_password', region='us-east-1' ) }}"
     jenkins_user: admin
-#  tasks:
-#    - name: Create Jenkins Job - Frontend
-#      community.general.jenkins_job:
-#        config: "{{ lookup('template', 'mjob.xml') }}"
-#        name: frontend
-#        password: "{{jenkins_password}}"
-#        url: "{{jenkins_url}}"
-#        user: "{{jenkins_user}}"
-#      vars:
-#        repo_name: frontend
-#        auto_trigger: "true"
-#
-#    - name: Create Jenkins Job - Backend
-#      community.general.jenkins_job:
-#        config: "{{ lookup('template', 'mjob.xml') }}"
-#        name: backend
-#        password: "{{jenkins_password}}"
-#        url: "{{jenkins_url}}"
-#        user: "{{jenkins_user}}"
-#      vars:
-#        repo_name: backend
-#        auto_trigger: "true"
-#
-#    - name: Create Jenkins Job - Schema Load
-#      community.general.jenkins_job:
-#        config: "{{ lookup('template', 'mjob.xml') }}"
-#        name: backend
-#        password: "{{jenkins_password}}"
-#        url: "{{jenkins_url}}"
-#        user: "{{jenkins_user}}"
-#      vars:
-#        repo_name: expense-schema-load
-#        auto_trigger: "true"
-#
-#    - name: Create Jenkins Job - Expense Parameters
-#      community.general.jenkins_job:
-#        config: "{{ lookup('template', 'job.xml') }}"
-#        name: expense-parameters
-#        password: "{{jenkins_password}}"
-#        url: "{{jenkins_url}}"
-#        user: "{{jenkins_user}}"
-#      vars:
-#        repo_name: parameters-01
-#        auto_trigger: "false"
-#        file_name: Jenkinsfile
-#
-#    - name: Create Jenkins Job - Expense Terraform
-#      community.general.jenkins_job:
-#        config: "{{ lookup('template', 'job.xml') }}"
-#        name: expense-terraform
-#        password: "{{jenkins_password}}"
-#        url: "{{jenkins_url}}"
-#        user: "{{jenkins_user}}"
-#      vars:
-#        repo_name: Terra-exp
-#        auto_trigger: "false"
-#        file_name: Jenkinsfile
-#
-#    - name: Create Jenkins Job - Mutable Deployment
-#      community.general.jenkins_job:
-#        config: "{{ lookup('template', 'job.xml') }}"
-#        name: mutable-deployment
-#        password: "{{jenkins_password}}"
-#        url: "{{jenkins_url}}"
-#        user: "{{jenkins_user}}"
-#      vars:
-#        repo_name: infra-ansible
-#        auto_trigger: "false"
-#        file_name: Jenkinsfile-Mutable
+  tasks:
+    - name: Create Jenkins Job - Frontend
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'mjob.xml') }}"
+        name: frontend
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: frontend
+        auto_trigger: "true"
+
+    - name: Create Jenkins Job - Backend
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'mjob.xml') }}"
+        name: backend
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: backend
+        auto_trigger: "true"
+
+    - name: Create Jenkins Job - Schema Load
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'mjob.xml') }}"
+        name: backend
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: expense-schema-load
+        auto_trigger: "true"
+
+    - name: Create Jenkins Job - Expense Parameters
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'job.xml') }}"
+        name: expense-parameters
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: parameters-01
+        auto_trigger: "false"
+        file_name: Jenkinsfile
+
+    - name: Create Jenkins Job - Expense Terraform
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'job.xml') }}"
+        name: expense-terraform
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: Terra-exp
+        auto_trigger: "false"
+        file_name: Jenkinsfile
+
+    - name: Create Jenkins Job - Mutable Deployment
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'job.xml') }}"
+        name: mutable-deployment
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: infra-ansible
+        auto_trigger: "false"
+        file_name: Jenkinsfile-Mutable

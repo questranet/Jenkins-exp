@@ -1,7 +1,7 @@
 - name: Ansible Jobs Create
   hosts: localhost
   vars:
-    jenkins_url : http://172.31.37.116:8080
+    jenkins_url : http://172.31.42.84:8080
     jenkins_password: "{{ lookup('aws_ssm', 'jenkins_password', region='us-east-1' ) }}"
     jenkins_user: admin
   tasks:

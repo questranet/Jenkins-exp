@@ -35,7 +35,7 @@
         url: "{{jenkins_url}}"
         user: "{{jenkins_user}}"
       vars:
-        repo_name: expense-schema-load
+        repo_name: Exp-schema-load
         auto_trigger: "true"
 
     - name: Create Jenkins Job - Parameters-01

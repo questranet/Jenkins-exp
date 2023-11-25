@@ -38,6 +38,17 @@
         repo_name: Exp-schema-load
         auto_trigger: "true"
 
+    - name: Create Jenkins Job - Config Parameter Init Container
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'mjob.xml') }}"
+        name: backend
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: expense-parameter-init-container
+        auto_trigger: "true"
+
     - name: Create Jenkins Job - Parameters-01
       community.general.jenkins_job:
         config: "{{ lookup('template', 'job.xml') }}"

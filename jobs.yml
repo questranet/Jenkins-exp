@@ -29,7 +29,7 @@
 
     - name: Create Jenkins Job - Schema Load
       community.general.jenkins_job:
-        config: "{{ lookup('template', 'mjob.xml') }}"
+        config: "{{ lookup('template', 'job.xml') }}"
         name: Exp-schema-load
         password: "{{jenkins_password}}"
         url: "{{jenkins_url}}"
@@ -40,7 +40,7 @@
 
     - name: Create Jenkins Job - Config Parameter Init Container
       community.general.jenkins_job:
-        config: "{{ lookup('template', 'mjob.xml') }}"
+        config: "{{ lookup('template', 'job.xml') }}"
         name: expense-parameter-init-container
         password: "{{jenkins_password}}"
         url: "{{jenkins_url}}"

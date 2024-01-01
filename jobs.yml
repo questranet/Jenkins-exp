@@ -84,3 +84,28 @@
         repo_name: infra-ansible
         auto_trigger: "false"
         file_name: Jenkinsfile-Mutable
+
+    - name: Create Jenkins Job - Helm Deployment
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'job.xml') }}"
+        name: helm-deployment
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: exp-helm-chart
+        auto_trigger: "false"
+        file_name: Jenkinsfile-Mutable
+
+    ### RoboShop
+    - name: Create Jenkins Job - Terra-roboshop
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'job.xml') }}"
+        name: Terra-roboshop
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: Terra-roboshop
+        auto_trigger: "false"
+        file_name: Jenkinsfile

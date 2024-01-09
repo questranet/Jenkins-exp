@@ -145,6 +145,6 @@
         url: "{{jenkins_url}}"
         user: "{{jenkins_user}}"
       vars:
-        repo_name: roboshop-ansible
+        repo_name: ansible-roboshop
         auto_trigger: "false"
         file_name: Jenkinsfile-Mutable

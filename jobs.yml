@@ -148,3 +148,15 @@
         repo_name: ansible-roboshop
         auto_trigger: "false"
         file_name: Jenkinsfile-Mutable
+
+    - name: Create Jenkins Job - RoboShop Immutable Deployment
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'job.xml') }}"
+        name: roboshop-immutable-deployment
+        password: "{{jenkins_password}}"
+        url: "{{jenkins_url}}"
+        user: "{{jenkins_user}}"
+      vars:
+        repo_name: ansible-roboshop
+        auto_trigger: "false"
+        file_name: Jenkinsfile-Immutable
